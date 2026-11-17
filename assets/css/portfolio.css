@@ -496,6 +496,11 @@ button:disabled {
 	grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
 }
 
+.credential-grid--certifications {
+	grid-auto-rows: 1fr;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .education-card,
 .credential-card {
 	background: var(--portfolio-surface);
@@ -520,17 +525,20 @@ button:disabled {
 }
 
 .credential-card__header {
-	align-items: center;
+	align-items: start;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 4rem minmax(0, 1fr);
 }
 
 .credential-card__logo {
 	background: #f5f8f7;
 	border-radius: 0.7rem;
-	flex: 0 0 3rem;
-	height: 3rem;
+	flex: 0 0 4rem;
+	height: 4rem;
 	object-fit: contain;
 	padding: 0.35rem;
-	width: 3rem;
+	width: 4rem;
 }
 
 .credential-card__logo--astronomer {
@@ -545,9 +553,20 @@ button:disabled {
 .credential-card__link {
 	border: 0;
 	color: inherit;
-	display: block;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
 	height: 100%;
 	text-decoration: none;
+}
+
+.credential-card__title {
+	line-height: 1.5;
+	min-height: 3em;
+}
+
+.credential-card__provider {
+	min-height: 2em;
 }
 
 .credential-card__link:hover strong {
@@ -575,7 +594,8 @@ button:disabled {
 	color: var(--portfolio-accent-dark);
 	font-size: 0.78rem;
 	font-weight: 700;
-	margin-top: 0.8rem;
+	margin-top: auto;
+	padding-top: 0.8rem;
 }
 
 .credential-card__logo--spaceapps {
@@ -731,7 +751,9 @@ button:disabled {
 	#nav {
 		align-items: stretch;
 		flex-direction: column;
-		position: static;
+		position: sticky;
+		top: 0.5rem;
+		z-index: 1000;
 	}
 
 	#nav ul.links {
@@ -752,6 +774,10 @@ button:disabled {
 	.education-grid,
 	.credential-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.credential-grid--certifications {
+		grid-auto-rows: auto;
 	}
 
 	#footer .contact-grid {
