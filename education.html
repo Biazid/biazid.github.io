@@ -12,6 +12,170 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            #main > .education-section {
+                padding: 4rem;
+            }
+
+            .education-section > header.major {
+                margin-bottom: 2rem;
+                text-align: left;
+            }
+
+            .education-section > header.major h1,
+            .education-section > header.major h2 {
+                font-size: 2.5rem;
+                margin-bottom: 0;
+            }
+
+            .education-grid,
+            .credential-grid {
+                display: grid;
+                gap: 1.25rem;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .education-card,
+            .credential-card {
+                background: #ffffff;
+                border: 1px solid #e6e9ec;
+                border-radius: 0.75rem;
+                box-shadow: 0 0.75rem 2rem rgba(33, 41, 49, 0.08);
+                padding: 1.5rem;
+            }
+
+            .education-card {
+                height: 100%;
+            }
+
+            .education-card__header {
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .education-card__logo {
+                align-items: center;
+                background: #f5f8fa;
+                border-radius: 0.65rem;
+                display: flex;
+                flex: 0 0 3.5rem;
+                height: 3.5rem;
+                justify-content: center;
+                padding: 0.45rem;
+            }
+
+            .education-card__logo img {
+                height: 100%;
+                object-fit: contain;
+                width: 100%;
+            }
+
+            .education-card h2 {
+                font-size: 1.15rem;
+                letter-spacing: 0.04em;
+                line-height: 1.35;
+                margin: 0;
+                text-align: left;
+                text-transform: none;
+            }
+
+            .education-card__location {
+                color: #717981;
+                font-size: 0.85rem;
+                margin: 0.25rem 0 0;
+            }
+
+            .education-card__degree {
+                font-weight: 600;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+                text-align: left;
+            }
+
+            .education-card__details {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin: 0;
+            }
+
+            .education-card__details span {
+                background: #eef8fb;
+                border-radius: 999px;
+                color: #176f89;
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                font-size: 0.8rem;
+                font-weight: 600;
+                padding: 0.35rem 0.75rem;
+            }
+
+            .education-card__note {
+                color: #626a71;
+                font-size: 0.9rem;
+                margin: 1rem 0 0;
+                text-align: left;
+            }
+
+            .education-section > h3 {
+                font-size: 1.1rem;
+                margin: 2rem 0 1rem;
+            }
+
+            .credential-grid {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .credential-card {
+                line-height: 1.5;
+            }
+
+            .credential-card__header {
+                align-items: flex-start;
+                display: flex;
+                gap: 1rem;
+            }
+
+            .credential-card__logo {
+                flex: 0 0 2.75rem;
+                height: 2.75rem;
+                object-fit: contain;
+                width: 2.75rem;
+            }
+
+            .credential-card__header > div {
+                min-width: 0;
+            }
+
+            .credential-card strong,
+            .credential-card span {
+                display: block;
+            }
+
+            .credential-card strong {
+                font-size: 1rem;
+            }
+
+            .credential-card span {
+                color: #717981;
+                font-size: 0.9rem;
+                margin-top: 0.35rem;
+            }
+
+            @media screen and (max-width: 736px) {
+                #main > .education-section {
+                    padding: 3rem 1.5rem;
+                }
+
+                .education-grid,
+                .credential-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
 	</head>
 	<body class="is-preload">
 
@@ -45,65 +209,111 @@
 				<div id="main">
 
 
-            
-                    <style>
-                        .education-entry img {
-                            width: 50px; /* Adjust the width as needed */
-                            height: auto; /* Maintain aspect ratio */
-                        }
-                    </style>
-                    
                     <!-- Education Section -->
-                    <section class="post">
+                    <section class="post education-section">
                         <header class="major">
                             <h1>Education</h1>
                         </header>
-                    
-                        <!-- Khulna University of Engineering and Technology -->
-                        <div class="education-entry">
-                            <img src="kuet_logo.png" alt="KUET Logo">
-                            <h2>Khulna University of Engineering & Technology</h2>
-                            <p>Bachelor of Science, Computer Science and Engineering</p>
-                            <p>2016 - 2020</p>
-                            <p>Grade: CGPA 2.96</p>
-                        </div>
-                    
-                        <!-- Dhaka College -->
-                        <div class="education-entry">
-                            <img src="Dhaka_College.png" alt="Dhaka College Logo">
-                            <h2>Dhaka College</h2>
-                            <p>HSC, Science</p>
-                            <p>2013 - 2015</p>
-                            <p>Grade: GPA 5</p>
-                        </div>
-                    
-                        <!-- A.K. High School & College -->
-                        <div class="education-entry">
-                            <img src="ak-high-school-logo.png" alt="A.K. High School & College Logo">
-                            <h2>A.K. High School & College</h2>
-                            <p>SSC, Science</p>
-                            <p>2008 - 2013</p>
-                            <p>Grade: GPA 5</p>
-                            <p>Gained Board Scholarship</p>
+
+                        <div class="education-grid">
+                            <article class="education-card">
+                                <div class="education-card__header">
+                                    <div class="education-card__logo"><img src="kuet_logo.png" alt="KUET logo"></div>
+                                    <div>
+                                        <h2>Khulna University of Engineering &amp; Technology</h2>
+                                        <p class="education-card__location">Bangladesh</p>
+                                    </div>
+                                </div>
+                                <p class="education-card__degree">B.Sc. in Computer Science and Engineering</p>
+                                <p class="education-card__details">
+                                    <span>2016–2020</span>
+                                </p>
+                            </article>
+
+                            <article class="education-card">
+                                <div class="education-card__header">
+                                    <div class="education-card__logo"><img src="Dhaka_College.png" alt="Dhaka College logo"></div>
+                                    <div>
+                                        <h2>Dhaka College</h2>
+                                        <p class="education-card__location">Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <p class="education-card__degree">Higher Secondary Certificate (HSC), Science</p>
+                                <p class="education-card__details">
+                                    <span>2013–2015</span>
+                                    <span>GPA 5.00</span>
+                                </p>
+                            </article>
+
+                            <article class="education-card">
+                                <div class="education-card__header">
+                                    <div class="education-card__logo"><img src="ak-high-school-logo.png" alt="A.K. High School &amp; College logo"></div>
+                                    <div>
+                                        <h2>A.K. High School &amp; College</h2>
+                                        <p class="education-card__location">Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <p class="education-card__degree">Secondary School Certificate (SSC), Science</p>
+                                <p class="education-card__details">
+                                    <span>2008–2013</span>
+                                    <span>GPA 5.00</span>
+                                </p>
+                                <p class="education-card__note">Recipient of a Board Scholarship</p>
+                            </article>
                         </div>
                     </section>
 
-                    <section class="post">
+                    <section class="post education-section">
                         <header class="major">
                             <h2>Certifications &amp; Awards</h2>
                         </header>
 
                         <h3>Certifications</h3>
-                        <ul>
-                            <li>Astronomer Certified: Apache Airflow 3 Fundamentals</li>
-                            <li>Astronomer Certified: DAG Authoring for Apache Airflow 3</li>
-                            <li>IBM Data Warehouse Engineer Specialization, Coursera</li>
-                            <li>Data Engineer Career Track (57 hours), DataCamp</li>
+                        <ul class="credential-grid">
+                            <li class="credential-card">
+                                <div class="credential-card__header">
+                                    <img class="credential-card__logo" src="images/astronomer.svg" alt="">
+                                    <div>
+                                        <strong>Apache Airflow 3 Fundamentals</strong>
+                                        <span>Astronomer Certified</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="credential-card">
+                                <div class="credential-card__header">
+                                    <img class="credential-card__logo" src="images/astronomer.svg" alt="">
+                                    <div>
+                                        <strong>DAG Authoring for Apache Airflow 3</strong>
+                                        <span>Astronomer Certified</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="credential-card">
+                                <div class="credential-card__header">
+                                    <img class="credential-card__logo" src="images/coursera.svg" alt="">
+                                    <div>
+                                        <strong>Data Warehouse Engineer Specialization</strong>
+                                        <span>IBM | Coursera</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="credential-card">
+                                <div class="credential-card__header">
+                                    <img class="credential-card__logo" src="images/datacamp.svg" alt="">
+                                    <div>
+                                        <strong>Data Engineer Career Track</strong>
+                                        <span>DataCamp | 57 hours</span>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
 
                         <h3>Awards</h3>
-                        <ul>
-                            <li>Champion, NASA International Space Apps Challenge, Bangladesh (2019)</li>
+                        <ul class="credential-grid">
+                            <li class="credential-card">
+                                <strong>Champion, NASA International Space Apps Challenge</strong>
+                                <span>Bangladesh | 2019</span>
+                            </li>
                         </ul>
                     </section>
                     
