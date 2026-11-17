@@ -89,7 +89,14 @@ body {
 	text-align: left;
 }
 
-#intro + #header {
+.site-header-sticky {
+	background: var(--portfolio-bg);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+#intro + .site-header-sticky #header {
 	display: none;
 }
 
@@ -123,8 +130,8 @@ body {
 	min-height: 0;
 	overflow: visible;
 	padding: 0.55rem 0.75rem;
-	position: sticky;
-	top: 0.75rem;
+	position: relative;
+	top: auto;
 	width: 100%;
 }
 
@@ -751,9 +758,6 @@ button:disabled {
 	#nav {
 		align-items: stretch;
 		flex-direction: column;
-		position: sticky;
-		top: 0.5rem;
-		z-index: 1000;
 	}
 
 	#nav ul.links {
